@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.control-row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.controller {
+    border: 1px black;
+    height: 700px;
+    width: 500px;
+}
+
+.control {
+    width: 75px;
+    height: 75px;
+}
+
+.joystick1 {
+    background-color: red;
+}
+
+.joystick2 {
+    background-color: blue;
+}
+
+.joystick3 {
+    background-color: green;
+}
+
+.button1 {
+    background-color: orange;
+}
+
+.button2 {
+    background-color: yellow;
+}
+
+.button3 {
+    background-color: purple;
+}
+
+.button4 {
+    background-color: grey;
+}
+
+.button5 {
+    background-color: teal;
+}
