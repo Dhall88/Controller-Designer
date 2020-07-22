@@ -2,6 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .control-row {
@@ -10,9 +11,16 @@ body {
 }
 
 .controller {
-    border: 1px black;
-    height: 700px;
-    width: 500px;
+    border: 1px solid black;
+    height: 400px;
+    width: 700px;
+    position: relative;
+}
+
+.trash {
+    height: 100px;
+    width: 100px;
+    background: darkgoldenrod;
 }
 
 .control {
@@ -20,7 +28,7 @@ body {
     height: 75px;
 }
 
-.joystick1 {
+#joystick1 {
     background-color: red;
 }
 
