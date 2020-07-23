@@ -42,7 +42,8 @@ $(() => {
     $document.mouseup((event)=> {
         let trashPos=$(".trash").position();
         if((event.pageX>trashPos.left && event.pageX<trashPos.left+100) && 
-            event.pageY>trashPos.top && event.pageY<trashPos.top+100) {
+            event.pageY>trashPos.top && event.pageY<trashPos.top+100 && 
+            !$(event.target).hasClass("trash")) {
             $(event.target).remove();
         } 
         $document.off("mousemove");
@@ -57,6 +58,11 @@ $(() => {
             result.push({xPos:$element.position().left-$controllerPos.left+37.5, yPos:$element.position().top-$controllerPos.top+37.5, id:$element.attr('id')})
 
         })
-            console.log(result)
+            if(result.length!==0) {
+                $("li").remove();
+            }
+            result.forEach((element) => {
+                $(".result").append(`<li>Button Type: ${element.id}, xCord: ${element.xPos}, yCord: ${element.yPos}</li>`)
+            })
         };
 });

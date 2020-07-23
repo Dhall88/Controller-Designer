@@ -1,4 +1,7 @@
 .container {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,6 +31,8 @@
     width: 75px;
     height: 75px;
     border-radius: 50%;
+    text-align: center;
+    line-height: 75px;
 }
 
 #joystick1 {

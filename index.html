@@ -13,6 +13,11 @@
 </head>
 <body>
     <div class="container">
+        <h1>Controller Designer</h1>
+        <h3>Instructions</h3>
+        <h4>Click and drag joysticks and buttons into the controller area to design a controller.</h4>
+        <h4>Drag any unwanted elements over the trash square to remove them from the design</h4>
+        <h4>Click submit to produce a list of the control type and position. Position is currently in pixels but can easily be millimeters, inches, parsecs, etc...</h4>
         <div class="control-row">
             <div id="joystick1" class="control">joystick 1</div>
             <div id="joystick2" class="control">joystick 2</div>
@@ -26,6 +31,14 @@
         <div class="controller">controller</div>
         <div class="trash">trash</div>
         <button onclick="buildArray()">Submit</button>
+        <ul class="result"></ul>
+        <ul> Future addons/improvements
+            <li>Styling...obvs</li>
+            <li>Just as opacity changes when dragging a control over the trash square, add a visual change when buttons are too close to one another.  Can't have two joysticks in the same spot.</li>
+            <li>Same sort of change when a button is dragged outside the controller space.  An alert or message should display if controls are in impossible spots upon submission.</li>
+            <li>In practice, the result list upon submit would not display on the page. This information will be stored in a database and an alert email with the information will be sent to you.</li>
+            <li>Add a save as well as submit button.  Save to store it for later, submit to actually move forward.</li>
+        </ul>
     </div>
 </body>
 </html>
