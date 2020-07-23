@@ -27,6 +27,7 @@
 .control {
     width: 75px;
     height: 75px;
+    border-radius: 50%;
 }
 
 #joystick1 {
@@ -59,4 +60,8 @@
 
 #button5 {
     background-color: teal;
+}
+
+.possibleTrash {
+    opacity:0.5;
 }
