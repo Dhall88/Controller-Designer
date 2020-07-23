@@ -9,20 +9,16 @@ $(() => {
     let controllerPos=$(".controller").position()
 
     $document.mousedown((event)=>{
-        console.log(event.target);
-        console.log(event.currentTarget)
+
+        let deltaX, deltaY, lastX=event.pageX, lastY=event.pageY, activePosition, mouseOffsetX, mouseOffsetY;
         if (!$(event.target).hasClass("control")){
             return;
-        }
-        console.log("past first if")
-        let deltaX, deltaY, lastX=event.pageX, lastY=event.pageY, activePosition, mouseOffsetX, mouseOffsetY;
-        if($(event.target).hasClass("copy")) {
+        } else if($(event.target).hasClass("copy")) {
             console.log("insecond if")
             $activeControl=$(event.target);
             activePosition=$activeControl.position();
             console.log(`x ${activePosition.left}   y${activePosition.top}`)
-        }
-        else {
+        } else {
             $activeControl=$(event.target).clone().addClass("copy").appendTo(".container");
             $activeControl.css({top: lastY, left: lastX, position: 'absolute'})
             activePosition=$activeControl.position();
@@ -40,7 +36,9 @@ $(() => {
     })
 
     $document.mouseup((event)=> {
-        if(event.pageX<30&&event.pageY<30) {
+        let trashPos=$(".trash").position();
+        if((event.pageX>trashPos.left && event.pageX<trashPos.left+100) && 
+            event.pageY>trashPos.top && event.pageY<trashPos.top+100) {
             $(event.target).remove();
         }
         console.log("in mouseup")
@@ -53,7 +51,7 @@ $(() => {
         let $controllerPos=$(".controller").position();
         $.each($components, (index,element) => {
             let $element=$(element)
-            result.push({xPos:$element.position().left-$controllerPos.left, yPost:$element.position().top-$controllerPos.top, id:$element.attr('id')})
+            result.push({xPos:$element.position().left-$controllerPos.left, yPos:$element.position().top-$controllerPos.top, id:$element.attr('id')})
 
         })
             // console.log(element);
