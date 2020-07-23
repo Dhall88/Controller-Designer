@@ -33,30 +33,30 @@
     background-color: red;
 }
 
-.joystick2 {
+#joystick2 {
     background-color: blue;
 }
 
-.joystick3 {
+#joystick3 {
     background-color: green;
 }
 
-.button1 {
+#button1 {
     background-color: orange;
 }
 
-.button2 {
+#button2 {
     background-color: yellow;
 }
 
-.button3 {
+#button3 {
     background-color: purple;
 }
 
-.button4 {
+#button4 {
     background-color: grey;
 }
 
-.button5 {
+#button5 {
     background-color: teal;
 }
