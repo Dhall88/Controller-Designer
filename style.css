@@ -12,6 +12,7 @@
 .control-row {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .controller {
@@ -38,16 +39,26 @@
 #digitalJoy {
     background-color: black;
     color: white;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
 }
 
 #analogJoy1 {
     background-color: black;
     color: white;
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
 }
 
 #analogJoy2 {
     background-color: black;
     color: white;
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
 }
 
 #rt {

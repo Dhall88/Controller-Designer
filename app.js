@@ -2,8 +2,8 @@ $(() => {
 
     let $activeControl;
     let $digitalJoy = $("#digitalJoy"), $analogJoy1=$("#analogJoy1"), $analogJoy2=$("#analogJoy2"),
-    $rt=$("rt"), $rb=$("#rb"), $r3=$("#r3"), $lt=$("#lt"), $lb=$("#lb"), $l3=$("#r3"), $x=$("#x"),
-    $y=$("y"), $a=$("#a"), $b=$("#b"), $menu=$("#menu"),  $psXbox=$("#psXbox"),  $view=$("#view");
+    $rt=$("#rt"), $rb=$("#rb"), $r3=$("#r3"), $lt=$("#lt"), $lb=$("#lb"), $l3=$("#l3"), $x=$("#x"),
+    $y=$("#y"), $a=$("#a"), $b=$("#b"), $menu=$("#menu"),  $psXbox=$("#psXbox"),  $view=$("#view");
     let $document=$(document);
     let buttonData=[];
     let $controllerPos=$(".controller").position();
@@ -14,6 +14,20 @@ $(() => {
         $menu.offset({top:20+$controllerPos.top,left:20+$controllerPos.left});
         $psXbox.offset({top:20+$controllerPos.top,left:70+$controllerPos.left});
         $view.offset({top:20+$controllerPos.top,left:120+$controllerPos.left});
+        $digitalJoy.offset({top:20+$controllerPos.top,left:300+$controllerPos.left});
+        $analogJoy1.offset({top:280+$controllerPos.top,left:20+$controllerPos.left});
+        $analogJoy2.offset({top:280+$controllerPos.top,left:580+$controllerPos.left});
+        $l3.offset({top:130+$controllerPos.top,left:20+$controllerPos.left});
+        $r3.offset({top:130+$controllerPos.top,left:605+$controllerPos.left});
+        $rt.offset({top:170+$controllerPos.top,left:470+$controllerPos.left});
+        $rb.offset({top:265+$controllerPos.top,left:470+$controllerPos.left});
+        $y.offset({top:170+$controllerPos.top,left:370+$controllerPos.left});
+        $b.offset({top:265+$controllerPos.top,left:370+$controllerPos.left});
+        $x.offset({top:170+$controllerPos.top,left:270+$controllerPos.left});
+        $a.offset({top:265+$controllerPos.top,left:270+$controllerPos.left});
+        $lt.offset({top:170+$controllerPos.top,left:170+$controllerPos.left});
+        $lb.offset({top:265+$controllerPos.top,left:170+$controllerPos.left});
+        $l3.offset({top:130+$controllerPos.top,left:20+$controllerPos.left});
     })
 
     $document.mousedown((event)=>{
