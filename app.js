@@ -8,7 +8,7 @@ $(() => {
     let buttonData=[];
     let $controllerPos=$(".controller").position();
 
-    let $axis1=$("#axis1")
+    let $axis1=$("#axis1"), $axis2=$("#axis2")
 
     $axis1.click(() => {
         $menu.offset({top:20+$controllerPos.top,left:20+$controllerPos.left});
@@ -27,7 +27,25 @@ $(() => {
         $a.offset({top:265+$controllerPos.top,left:270+$controllerPos.left});
         $lt.offset({top:170+$controllerPos.top,left:170+$controllerPos.left});
         $lb.offset({top:265+$controllerPos.top,left:170+$controllerPos.left});
-        $l3.offset({top:130+$controllerPos.top,left:20+$controllerPos.left});
+    })
+
+    $axis2.click(() => {
+        $menu.offset({top:20+$controllerPos.top,left:250+$controllerPos.left});
+        $psXbox.offset({top:20+$controllerPos.top,left:325+$controllerPos.left});
+        $view.offset({top:20+$controllerPos.top,left:400+$controllerPos.left});
+        $digitalJoy.offset({top:20+$controllerPos.top,left:20+$controllerPos.left});
+        $analogJoy1.offset({top:280+$controllerPos.top,left:125+$controllerPos.left});
+        $analogJoy2.offset({top:280+$controllerPos.top,left:350+$controllerPos.left});
+        $l3.offset({top:305+$controllerPos.top,left:20+$controllerPos.left});
+        $r3.offset({top:305+$controllerPos.top,left:480+$controllerPos.left});
+        $rt.offset({top:215+$controllerPos.top,left:460+$controllerPos.left});
+        $rb.offset({top:180+$controllerPos.top,left:380+$controllerPos.left});
+        $y.offset({top:70+$controllerPos.top,left:550+$controllerPos.left});
+        $b.offset({top:100+$controllerPos.top,left:620+$controllerPos.left});
+        $x.offset({top:100+$controllerPos.top,left:480+$controllerPos.left});
+        $a.offset({top:150+$controllerPos.top,left:550+$controllerPos.left});
+        $lt.offset({top:215+$controllerPos.top,left:40+$controllerPos.left});
+        $lb.offset({top:180+$controllerPos.top,left:120+$controllerPos.left});
     })
 
     $document.mousedown((event)=>{
@@ -59,16 +77,6 @@ $(() => {
                 $(event.target).removeClass("possibleTrash")
             }
         })
-    })
-
-    $document.mouseup((event)=> {
-        let trashPos=$(".trash").position();
-        if((event.pageX>trashPos.left && event.pageX<trashPos.left+100) && 
-            event.pageY>trashPos.top && event.pageY<trashPos.top+100 && 
-            !$(event.target).hasClass("trash")) {
-            $(event.target).remove();
-        } 
-        $document.off("mousemove");
     })
 
     buildArray = () => {
