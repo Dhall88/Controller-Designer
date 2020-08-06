@@ -1,12 +1,20 @@
 $(() => {
 
     let $activeControl;
-    let controlId;
-    let $joyStick1 = $("#joystick1");
+    let $digitalJoy = $("#digitalJoy"), $analogJoy1=$("#analogJoy1"), $analogJoy2=$("#analogJoy2"),
+    $rt=$("rt"), $rb=$("#rb"), $r3=$("#r3"), $lt=$("#lt"), $lb=$("#lb"), $l3=$("#r3"), $x=$("#x"),
+    $y=$("y"), $a=$("#a"), $b=$("#b"), $menu=$("#menu"),  $psXbox=$("#psXbox"),  $view=$("#view");
     let $document=$(document);
     let buttonData=[];
+    let $controllerPos=$(".controller").position();
 
-    let controllerPos=$(".controller").position()
+    let $axis1=$("#axis1")
+
+    $axis1.click(() => {
+        $menu.offset({top:20+$controllerPos.top,left:20+$controllerPos.left});
+        $psXbox.offset({top:20+$controllerPos.top,left:70+$controllerPos.left});
+        $view.offset({top:20+$controllerPos.top,left:120+$controllerPos.left});
+    })
 
     $document.mousedown((event)=>{
 

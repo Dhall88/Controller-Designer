@@ -12,6 +12,14 @@
     <script src="app.js"></script>
 </head>
 <body>
+    <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+          <p id="axis1">Axis Pro 1</p>
+          <p>Axis Pro 2</p>
+          <p>Axis Pro 4</p>
+        </div>
+      </div>
     <div class="container">
         <h1>Controller Designer</h1>
         <h2>Instructions</h3>
@@ -19,14 +27,23 @@
         <h4>Drag any unwanted elements over the trash square to remove them from the design</h4>
         <h4>Click submit to produce a list of the control type and position. Position is currently in pixels but can easily be millimeters, inches, parsecs, etc...</h4>
         <div class="control-row">
-            <div id="joystick1" class="control">joystick 1</div>
-            <div id="joystick2" class="control">joystick 2</div>
-            <div id="joystick3" class="control">joystick 3</div>
-            <div id="button1" class="control">button 1</div>
-            <div id="button2" class="control">button 2</div>
-            <div id="button3" class="control">button 3</div>
-            <div id="button4" class="control">button 4</div>
-            <div id="button5" class="control">button 5</div>
+            <div id="digitalJoy" class="control">Digital Joystick</div>
+            <div id="analogJoy1" class="control">Analog Joystick1</div>
+            <div id="analogJoy2" class="control">Analog Joystick2</div>
+            <div id="rt" class="control">Rt</div>
+            <div id="rb" class="control">Rb</div>
+            <div id="r3" class="control">R3</div>
+            <div id="lt" class="control">Lt</div>
+            <div id="lb" class="control">Lb</div>
+            <div id="l3" class="control">L3</div>
+            <div id="x" class="control">X</div>
+            <div id="y" class="control">Y</div>
+            <div id="a" class="control">A</div>
+            <div id="b" class="control">B</div>
+            <div id="menu" class="control">Menu</div>
+            <div id="psXbox" class="control">PS/Xbox</div>
+            <div id="view" class="control">View</div>
+
         </div>
         <div class="controller">controller</div>
         <div class="trash">trash</div>
@@ -40,5 +57,6 @@
             <p>Add a save as well as submit button.  Save to store it for later, submit to actually move forward.</p>
         </ul>
     </div>
+    
 </body>
 </html>
