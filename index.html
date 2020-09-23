@@ -17,7 +17,7 @@
         <div class="dropdown-content">
           <p id="axis1">Axis Pro 1</p>
           <p id="axis2">Axis Pro 2</p>
-          <p>Axis Pro 4</p>
+          <p id="axis4">Axis Pro 4</p>
         </div>
       </div>
     <div class="container">
@@ -26,7 +26,27 @@
         <h4>Click and drag joysticks and buttons into the controller area to design a controller.</h4>
         <h4>Drag any unwanted elements over the trash square to remove them from the design</h4>
         <h4>Click submit to produce a list of the control type and position. Position is currently in pixels but can easily be millimeters, inches, parsecs, etc...</h4>
-        <div class="control-row">
+        
+        <div class="scrollmenu">
+            <div id="digitalJoy" class="control">Digital Joystick</div>
+            <div id="analogJoy1" class="control">Analog Joystick1</div>
+            <div id="analogJoy2" class="control">Analog Joystick2</div>
+            <div id="rt" class="control">Rt</div>
+            <div id="rb" class="control">Rb</div>
+            <div id="r3" class="control">R3</div>
+            <div id="lt" class="control">Lt</div>
+            <div id="lb" class="control">Lb</div>
+            <div id="l3" class="control">L3</div>
+            <div id="x" class="control">X</div>
+            <div id="y" class="control">Y</div>
+            <div id="a" class="control">A</div>
+            <div id="b" class="control">B</div>
+            <div id="menu" class="control">Menu</div>
+            <div id="psXbox" class="control">PS/Xbox</div>
+            <div id="view" class="control">View</div>
+          </div>
+        
+        <!-- <div class="control-row">
             <div id="digitalJoy" class="control">Digital Joystick</div>
             <div id="analogJoy1" class="control">Analog Joystick1</div>
             <div id="analogJoy2" class="control">Analog Joystick2</div>
@@ -44,7 +64,7 @@
             <div id="psXbox" class="control">PS/Xbox</div>
             <div id="view" class="control">View</div>
 
-        </div>
+        </div> -->
         <div class="controller">controller</div>
         <button onclick="buildArray()">Submit</button>
         <ul class="result"></ul>
