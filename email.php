@@ -1,10 +1,13 @@
 <?php
-// the message
-$msg = "First line of text\nSecond line of text";
 
-// use wordwrap() if lines are longer than 70 characters
-$msg = wordwrap($msg,70);
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: PUT, GET, POST");
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+// the message
+$name= $_POST['name'];
+$email= $_POST['email'];
+
 
 // send email
-mail("dhall87@gmail.com","test",$msg);
+mail($email,$name,'Thank You');
 ?>

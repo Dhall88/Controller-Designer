@@ -115,12 +115,14 @@ $(() => {
             })
         };
 
+        let varData = 'name=' + 'david' + '&email=dhall87@gmail.com'
+
         $.ajax({
             type: "POST",
             url: "email.php",
-            data: result,
+            data: varData,
             success: function(){
-                $('.success').fadeIn(1000);
+                alert("yay!")
             }
         });
 });
