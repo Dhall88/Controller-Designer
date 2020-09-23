@@ -1,5 +1,5 @@
 $(() => {
-
+    let result = [];
     let $activeControl;
     let $digitalJoy = $("#digitalJoy"), $analogJoy1=$("#analogJoy1"), $analogJoy2=$("#analogJoy2"),
     $rt=$("#rt"), $rb=$("#rb"), $r3=$("#r3"), $lt=$("#lt"), $lb=$("#lb"), $l3=$("#l3"), $x=$("#x"),
@@ -19,14 +19,14 @@ $(() => {
         $analogJoy2.css({position: 'absolute'}).offset({top:420+$controllerPos.top,left:723+$controllerPos.left});
         $l3.css({position: 'absolute'}).offset({top:230+$controllerPos.top,left:30+$controllerPos.left});
         $r3.css({position: 'absolute'}).offset({top:230+$controllerPos.top,left:785+$controllerPos.left});
-        $rt.css({position: 'absolute'}).offset({top:330+$controllerPos.top,left:590+$controllerPos.left});
-        $rb.css({position: 'absolute'}).offset({top:450+$controllerPos.top,left:590+$controllerPos.left});
-        $y.css({position: 'absolute'}).offset({top:330+$controllerPos.top,left:470+$controllerPos.left});
-        $b.css({position: 'absolute'}).offset({top:450+$controllerPos.top,left:470+$controllerPos.left});
-        $x.css({position: 'absolute'}).offset({top:330+$controllerPos.top,left:350+$controllerPos.left});
-        $a.css({position: 'absolute'}).offset({top:450+$controllerPos.top,left:350+$controllerPos.left});
-        $lt.css({position: 'absolute'}).offset({top:330+$controllerPos.top,left:230+$controllerPos.left});
-        $lb.css({position: 'absolute'}).offset({top:450+$controllerPos.top,left:230+$controllerPos.left});
+        $rt.css({position: 'absolute'}).offset({top:330+$controllerPos.top,left:585+$controllerPos.left});
+        $rb.css({position: 'absolute'}).offset({top:450+$controllerPos.top,left:585+$controllerPos.left});
+        $y.css({position: 'absolute'}).offset({top:330+$controllerPos.top,left:467.5+$controllerPos.left});
+        $b.css({position: 'absolute'}).offset({top:450+$controllerPos.top,left:467.5+$controllerPos.left});
+        $x.css({position: 'absolute'}).offset({top:330+$controllerPos.top,left:352.5+$controllerPos.left});
+        $a.css({position: 'absolute'}).offset({top:450+$controllerPos.top,left:352.5+$controllerPos.left});
+        $lt.css({position: 'absolute'}).offset({top:330+$controllerPos.top,left:235+$controllerPos.left});
+        $lb.css({position: 'absolute'}).offset({top:450+$controllerPos.top,left:235+$controllerPos.left});
     })
 
     $axis2.click(() => {
@@ -49,22 +49,22 @@ $(() => {
     })
 
     $axis4.click(() => {
-        $menu.css({position: 'absolute'}).css({position: 'absolute'}).offset({top:50+$controllerPos.top,left:340+$controllerPos.left});
-        $psXbox.css({position: 'absolute'}).css({position: 'absolute'}).offset({top:170+$controllerPos.top,left:340+$controllerPos.left});
-        $view.css({position: 'absolute'}).css({position: 'absolute'}).offset({top:290+$controllerPos.top,left:340+$controllerPos.left});
-        $digitalJoy.css({position: 'absolute'}).css({position: 'absolute'}).offset({top:50+$controllerPos.top,left:105+$controllerPos.left});
-        $analogJoy1.css({position: 'absolute'}).css({position: 'absolute'}).offset({top:420+$controllerPos.top,left:20+$controllerPos.left});
-        $analogJoy2.css({position: 'absolute'}).css({position: 'absolute'}).offset({top:420+$controllerPos.top,left:270+$controllerPos.left});
-        $l3.css({position: 'absolute'}).offset({top:280+$controllerPos.top,left:525+$controllerPos.left});
-        $r3.css({position: 'absolute'}).offset({top:280+$controllerPos.top,left:640+$controllerPos.left});
-        $rt.css({position: 'absolute'}).offset({top:60+$controllerPos.top,left:800+$controllerPos.left});
-        $rb.css({position: 'absolute'}).offset({top:180+$controllerPos.top,left:800+$controllerPos.left});
-        $y.css({position: 'absolute'}).offset({top:60+$controllerPos.top,left:690+$controllerPos.left});
-        $b.css({position: 'absolute'}).offset({top:180+$controllerPos.top,left:690+$controllerPos.left});
-        $x.css({position: 'absolute'}).offset({top:60+$controllerPos.top,left:580+$controllerPos.left});
-        $a.css({position: 'absolute'}).offset({top:180+$controllerPos.top,left:580+$controllerPos.left});
-        $lt.css({position: 'absolute'}).offset({top:60+$controllerPos.top,left:470+$controllerPos.left});
-        $lb.css({position: 'absolute'}).offset({top:180+$controllerPos.top,left:470+$controllerPos.left});
+        $menu.css({position: 'absolute'}).offset({top:50+$controllerPos.top,left:340+$controllerPos.left});
+        $psXbox.css({position: 'absolute'}).offset({top:170+$controllerPos.top,left:340+$controllerPos.left});
+        $view.css({position: 'absolute'}).offset({top:290+$controllerPos.top,left:340+$controllerPos.left});
+        $digitalJoy.css({position: 'absolute'}).offset({top:50+$controllerPos.top,left:105+$controllerPos.left});
+        $analogJoy1.css({position: 'absolute'}).offset({top:420+$controllerPos.top,left:20+$controllerPos.left});
+        $analogJoy2.css({position: 'absolute'}).offset({top:420+$controllerPos.top,left:270+$controllerPos.left});
+        $l3.offset({top:280+$controllerPos.top,left:525+$controllerPos.left});
+        $r3.offset({top:280+$controllerPos.top,left:640+$controllerPos.left});
+        $rt.offset({top:60+$controllerPos.top,left:800+$controllerPos.left});
+        $rb.offset({top:180+$controllerPos.top,left:800+$controllerPos.left});
+        $y.offset({top:60+$controllerPos.top,left:690+$controllerPos.left});
+        $b.offset({top:180+$controllerPos.top,left:690+$controllerPos.left});
+        $x.offset({top:60+$controllerPos.top,left:580+$controllerPos.left});
+        $a.offset({top:180+$controllerPos.top,left:580+$controllerPos.left});
+        $lt.offset({top:60+$controllerPos.top,left:470+$controllerPos.left});
+        $lb.offset({top:180+$controllerPos.top,left:470+$controllerPos.left});
     })
 
     $document.mousedown((event)=>{
@@ -99,12 +99,12 @@ $(() => {
 
     buildArray = () => {
         let $components=$(".control")
-        console.log($components)
-        let result= [];
+        result= [];
         let $controllerPos=$(".controller").position();
         $.each($components, (index,element) => {
             let $element=$(element)
-            result.push({xPos:$element.position().left-$controllerPos.left+37.5, yPos:$element.position().top-$controllerPos.top+37.5, id:$element.attr('id')})
+            let centerOffset=$element.width()/2;
+            result.push({xPos:$element.position().left-$controllerPos.left+centerOffset, yPos:$element.position().top-$controllerPos.top+centerOffset, id:$element.attr('id')})
 
         })
             if(result.length!==0) {
@@ -114,4 +114,24 @@ $(() => {
                 $(".result").append(`<li>Button Type: ${element.id}, xCord: ${element.xPos}, yCord: ${element.yPos}</li>`)
             })
         };
+
+        $.ajax({
+            type: "POST",
+            url: "email.php",
+            data: result,
+            success: function(){
+                $('.success').fadeIn(1000);
+            }
+        });
 });
+
+// $(function () {
+//     $('#emailLink').on('click', function (event) {
+//         event.preventDefault();
+//       alert("Huh");
+//       var email = 'dhall87@gmail.com';
+//       var subject = 'Test email';
+//       var emailBody = 'result';
+//       window.location = 'mailto:' + email + '?subject=' + subject + '&body=' +   emailBody;
+//     });
+//   });
