@@ -55,16 +55,16 @@ $(() => {
         $digitalJoy.css({position: 'absolute'}).offset({top:50+$controllerPos.top,left:105+$controllerPos.left});
         $analogJoy1.css({position: 'absolute'}).offset({top:420+$controllerPos.top,left:20+$controllerPos.left});
         $analogJoy2.css({position: 'absolute'}).offset({top:420+$controllerPos.top,left:270+$controllerPos.left});
-        $l3.offset({top:280+$controllerPos.top,left:525+$controllerPos.left});
-        $r3.offset({top:280+$controllerPos.top,left:640+$controllerPos.left});
-        $rt.offset({top:60+$controllerPos.top,left:800+$controllerPos.left});
-        $rb.offset({top:180+$controllerPos.top,left:800+$controllerPos.left});
-        $y.offset({top:60+$controllerPos.top,left:690+$controllerPos.left});
-        $b.offset({top:180+$controllerPos.top,left:690+$controllerPos.left});
-        $x.offset({top:60+$controllerPos.top,left:580+$controllerPos.left});
-        $a.offset({top:180+$controllerPos.top,left:580+$controllerPos.left});
-        $lt.offset({top:60+$controllerPos.top,left:470+$controllerPos.left});
-        $lb.offset({top:180+$controllerPos.top,left:470+$controllerPos.left});
+        $l3.css({position: 'absolute'}).offset({top:280+$controllerPos.top,left:525+$controllerPos.left});
+        $r3.css({position: 'absolute'}).offset({top:280+$controllerPos.top,left:640+$controllerPos.left});
+        $rt.css({position: 'absolute'}).offset({top:60+$controllerPos.top,left:800+$controllerPos.left});
+        $rb.css({position: 'absolute'}).offset({top:180+$controllerPos.top,left:800+$controllerPos.left});
+        $y.css({position: 'absolute'}).offset({top:60+$controllerPos.top,left:690+$controllerPos.left});
+        $b.css({position: 'absolute'}).offset({top:180+$controllerPos.top,left:690+$controllerPos.left});
+        $x.css({position: 'absolute'}).offset({top:60+$controllerPos.top,left:580+$controllerPos.left});
+        $a.css({position: 'absolute'}).offset({top:180+$controllerPos.top,left:580+$controllerPos.left});
+        $lt.css({position: 'absolute'}).offset({top:60+$controllerPos.top,left:470+$controllerPos.left});
+        $lb.css({position: 'absolute'}).offset({top:180+$controllerPos.top,left:470+$controllerPos.left});
     })
 
     $document.mousedown((event)=>{
@@ -117,23 +117,4 @@ $(() => {
 
         let varData = 'name=' + 'david' + '&email=dhall87@gmail.com'
 
-        $.ajax({
-            type: "POST",
-            url: "email.php",
-            data: varData,
-            success: function(){
-                alert("yay!")
-            }
-        });
 });
-
-// $(function () {
-//     $('#emailLink').on('click', function (event) {
-//         event.preventDefault();
-//       alert("Huh");
-//       var email = 'dhall87@gmail.com';
-//       var subject = 'Test email';
-//       var emailBody = 'result';
-//       window.location = 'mailto:' + email + '?subject=' + subject + '&body=' +   emailBody;
-//     });
-//   });
