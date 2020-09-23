@@ -30,41 +30,41 @@ $(() => {
     })
 
     $axis2.click(() => {
-        $menu.offset({top:20+$controllerPos.top,left:315+$controllerPos.left});
-        $psXbox.offset({top:20+$controllerPos.top,left:419.5+$controllerPos.left});
-        $view.offset({top:20+$controllerPos.top,left:530+$controllerPos.left});
-        $digitalJoy.offset({top:20+$controllerPos.top,left:20+$controllerPos.left});
-        $analogJoy1.offset({top:410+$controllerPos.top,left:140+$controllerPos.left});
-        $analogJoy2.offset({top:410+$controllerPos.top,left:400+$controllerPos.left});
-        $l3.offset({top:500+$controllerPos.top,left:10+$controllerPos.left});
-        $r3.offset({top:500+$controllerPos.top,left:620+$controllerPos.left});
-        $rt.offset({top:380+$controllerPos.top,left:600+$controllerPos.left});
-        $rb.offset({top:290+$controllerPos.top,left:520+$controllerPos.left});
-        $y.offset({top:185+$controllerPos.top,left:735+$controllerPos.left});
-        $b.offset({top:280+$controllerPos.top,left:810+$controllerPos.left});
-        $x.offset({top:230+$controllerPos.top,left:625+$controllerPos.left});
-        $a.offset({top:320+$controllerPos.top,left:700+$controllerPos.left});
-        $lt.offset({top:380+$controllerPos.top,left:30+$controllerPos.left});
-        $lb.offset({top:290+$controllerPos.top,left:110+$controllerPos.left});
+        $menu.css({position: 'absolute'}).offset({top:20+$controllerPos.top,left:315+$controllerPos.left});
+        $psXbox.css({position: 'absolute'}).css({position: 'absolute'}).offset({top:20+$controllerPos.top,left:419.5+$controllerPos.left});
+        $view.css({position: 'absolute'}).css({position: 'absolute'}).offset({top:20+$controllerPos.top,left:530+$controllerPos.left});
+        $digitalJoy.css({position: 'absolute'}).css({position: 'absolute'}).offset({top:20+$controllerPos.top,left:20+$controllerPos.left});
+        $analogJoy1.css({position: 'absolute'}).css({position: 'absolute'}).offset({top:410+$controllerPos.top,left:140+$controllerPos.left});
+        $analogJoy2.css({position: 'absolute'}).css({position: 'absolute'}).offset({top:410+$controllerPos.top,left:400+$controllerPos.left});
+        $l3.css({position: 'absolute'}).offset({top:500+$controllerPos.top,left:10+$controllerPos.left});
+        $r3.css({position: 'absolute'}).offset({top:500+$controllerPos.top,left:620+$controllerPos.left});
+        $rt.css({position: 'absolute'}).offset({top:380+$controllerPos.top,left:600+$controllerPos.left});
+        $rb.css({position: 'absolute'}).offset({top:290+$controllerPos.top,left:520+$controllerPos.left});
+        $y.css({position: 'absolute'}).offset({top:185+$controllerPos.top,left:735+$controllerPos.left});
+        $b.css({position: 'absolute'}).offset({top:280+$controllerPos.top,left:810+$controllerPos.left});
+        $x.css({position: 'absolute'}).offset({top:230+$controllerPos.top,left:625+$controllerPos.left});
+        $a.css({position: 'absolute'}).offset({top:320+$controllerPos.top,left:700+$controllerPos.left});
+        $lt.css({position: 'absolute'}).offset({top:380+$controllerPos.top,left:30+$controllerPos.left});
+        $lb.css({position: 'absolute'}).offset({top:290+$controllerPos.top,left:110+$controllerPos.left});
     })
 
     $axis4.click(() => {
-        $menu.offset({top:20+$controllerPos.top,left:270+$controllerPos.left});
-        $psXbox.offset({top:100+$controllerPos.top,left:270+$controllerPos.left});
-        $view.offset({top:180+$controllerPos.top,left:270+$controllerPos.left});
-        $digitalJoy.offset({top:30+$controllerPos.top,left:75+$controllerPos.left});
-        $analogJoy1.offset({top:280+$controllerPos.top,left:20+$controllerPos.left});
-        $analogJoy2.offset({top:280+$controllerPos.top,left:225+$controllerPos.left});
-        $l3.offset({top:200+$controllerPos.top,left:400+$controllerPos.left});
-        $r3.offset({top:200+$controllerPos.top,left:485+$controllerPos.left});
-        $rt.offset({top:30+$controllerPos.top,left:605+$controllerPos.left});
-        $rb.offset({top:120+$controllerPos.top,left:605+$controllerPos.left});
-        $y.offset({top:30+$controllerPos.top,left:520+$controllerPos.left});
-        $b.offset({top:120+$controllerPos.top,left:520+$controllerPos.left});
-        $x.offset({top:30+$controllerPos.top,left:435+$controllerPos.left});
-        $a.offset({top:120+$controllerPos.top,left:435+$controllerPos.left});
-        $lt.offset({top:30+$controllerPos.top,left:350+$controllerPos.left});
-        $lb.offset({top:120+$controllerPos.top,left:350+$controllerPos.left});
+        $menu.css({position: 'absolute'}).css({position: 'absolute'}).offset({top:50+$controllerPos.top,left:340+$controllerPos.left});
+        $psXbox.css({position: 'absolute'}).css({position: 'absolute'}).offset({top:170+$controllerPos.top,left:340+$controllerPos.left});
+        $view.css({position: 'absolute'}).css({position: 'absolute'}).offset({top:290+$controllerPos.top,left:340+$controllerPos.left});
+        $digitalJoy.css({position: 'absolute'}).css({position: 'absolute'}).offset({top:50+$controllerPos.top,left:105+$controllerPos.left});
+        $analogJoy1.css({position: 'absolute'}).css({position: 'absolute'}).offset({top:420+$controllerPos.top,left:20+$controllerPos.left});
+        $analogJoy2.css({position: 'absolute'}).css({position: 'absolute'}).offset({top:420+$controllerPos.top,left:270+$controllerPos.left});
+        $l3.css({position: 'absolute'}).offset({top:280+$controllerPos.top,left:525+$controllerPos.left});
+        $r3.css({position: 'absolute'}).offset({top:280+$controllerPos.top,left:640+$controllerPos.left});
+        $rt.css({position: 'absolute'}).offset({top:60+$controllerPos.top,left:800+$controllerPos.left});
+        $rb.css({position: 'absolute'}).offset({top:180+$controllerPos.top,left:800+$controllerPos.left});
+        $y.css({position: 'absolute'}).offset({top:60+$controllerPos.top,left:690+$controllerPos.left});
+        $b.css({position: 'absolute'}).offset({top:180+$controllerPos.top,left:690+$controllerPos.left});
+        $x.css({position: 'absolute'}).offset({top:60+$controllerPos.top,left:580+$controllerPos.left});
+        $a.css({position: 'absolute'}).offset({top:180+$controllerPos.top,left:580+$controllerPos.left});
+        $lt.css({position: 'absolute'}).offset({top:60+$controllerPos.top,left:470+$controllerPos.left});
+        $lb.css({position: 'absolute'}).offset({top:180+$controllerPos.top,left:470+$controllerPos.left});
     })
 
     $document.mousedown((event)=>{
@@ -99,6 +99,7 @@ $(() => {
 
     buildArray = () => {
         let $components=$(".control")
+        console.log($components)
         let result= [];
         let $controllerPos=$(".controller").position();
         $.each($components, (index,element) => {
