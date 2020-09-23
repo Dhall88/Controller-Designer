@@ -1,0 +1,19 @@
+{
+  "name": "controller-designer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dhall88/Controller-Designer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dhall88/Controller-Designer/issues"
+  },
+  "homepage": "https://github.com/Dhall88/Controller-Designer#readme"
+}
