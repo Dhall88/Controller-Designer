@@ -1,7 +1,7 @@
 .container {
-    -webkit-user-select: none;
+    /* -webkit-user-select: none;
     -moz-user-select: none;
-    user-select: none;
+    user-select: none; */
     display: flex;
     flex-direction: column;
     justify-content: center;
