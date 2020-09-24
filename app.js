@@ -115,6 +115,4 @@ $(() => {
             })
         };
 
-        let varData = 'name=' + 'david' + '&email=dhall87@gmail.com'
-
 });
