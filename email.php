@@ -34,3 +34,4 @@ try {
 } catch (Exception $e) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 }
+?>
