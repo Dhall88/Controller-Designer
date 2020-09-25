@@ -113,24 +113,18 @@ $(() => {
             result.forEach((element) => {
                 $(".result").append(`<li>Button Type: ${element.id}, xCord: ${element.xPos}, yCord: ${element.yPos}</li>`)
             })
-            var name = "Danny Test";
-            var email = "DT@DT.DT";
-            var text = "TESTTESTTEST";
-            var dataString = 'name='+ name + '&email=' + email + '&text=' + text;
-    
-                jQuery.ajax({
-                    url: "email.php",
-                    data:'userName='+"Danny Test"+'&userEmail='+
-                    "contactEMAIL"+'&subject='+
-                    "TEST SUBJECT"+'&content='+
-                    "TESTESTETESTWETST",
-                    type: "POST",
-                    success:function(data){
-                        console.log("sucess!");
-                    },
-                    error:function (){}
-                });
-            }
+            
+            $.ajax({
+                type: "POST",
+                url: "email.php",
+                data: "test",
+                success: function(){
+                    console.log("jquery success")
+                }
+            })
+
+
+        }
 
 
 });
