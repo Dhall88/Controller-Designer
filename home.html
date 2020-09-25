@@ -29,13 +29,19 @@
         <h4>Drag any unwanted elements over the trash square to remove them from the design</h4>
         <h4>Click submit to produce a list of the control type and position. Position is currently in pixels but can easily be millimeters, inches, parsecs, etc...</h4>
         
-        <div class="scrollmenu">
+        <div class="wrapper">
+            <div class="wrapper1">
+        <div class="scrollmenu second row">
             <div id="digitalJoy" class="control">Digital Joystick</div>
             <div id="analogJoy1" class="control">Analog Joystick1</div>
             <div id="analogJoy2" class="control">Analog Joystick2</div>
             <div id="rt" class="control">Rt</div>
             <div id="rb" class="control">Rb</div>
             <div id="r3" class="control">R3</div>
+          </div>
+        </div>
+        <div class="wrapper2">
+          <div class="scrollmenu secondrow">
             <div id="lt" class="control">Lt</div>
             <div id="lb" class="control">Lb</div>
             <div id="l3" class="control">L3</div>
@@ -47,6 +53,8 @@
             <div id="psXbox" class="control">PS/Xbox</div>
             <div id="view" class="control">View</div>
           </div>
+        </div>
+        </div>
         
         <div class="controller">controller</div>
         <button onclick="buildArray()">Submit</button>
