@@ -115,4 +115,18 @@ $(() => {
             })
         };
 
+        var name = "Danny Test";
+        var email = "DT@DT.DT";
+        var text = "TESTTESTTEST";
+        var dataString = 'name='+ name + '&email=' + email + '&text=' + text;
+
+        $.ajax({
+            type: "POST",
+            url: "index.php",
+            data: dataString,
+            success: function(){
+            $('.success').fadeIn(1000);
+            }
+        });
+
 });
