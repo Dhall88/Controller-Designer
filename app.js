@@ -123,7 +123,7 @@ $(() => {
                 url: "index.php",
                 data: dataString,
                 success: function(){
-                $('.success').fadeIn(1000);
+                console.log("Success in JQUERY");
                 }
             });
         };
