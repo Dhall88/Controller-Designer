@@ -118,15 +118,18 @@ $(() => {
             var text = "TESTTESTTEST";
             var dataString = 'name='+ name + '&email=' + email + '&text=' + text;
     
-            $.ajax({
-                type: "POST",
-                url: "index.php",
-                data: dataString,
-                success: function(){
-                console.log("Success in JQUERY");
-                }
-            });
-        };
+                jQuery.ajax({
+                    url: "email.php",
+                    data:'userName='+"Danny Test"+'&userEmail='+
+                    "contactEMAIL"+'&subject='+
+                    "TEST SUBJECT"+'&content='+
+                    "TESTESTETESTWETST",
+                    type: "POST",
+                    success:function(data){
+                        console.log("sucess!");
+                    },
+                    error:function (){}
+                });
 
 
 });
