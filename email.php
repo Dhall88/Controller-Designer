@@ -1,7 +1,7 @@
 <?php
 
-ini_set('display_errors', 1); 
-error_reporting(E_ALL);
+// ini_set('display_errors', 1); 
+// error_reporting(E_ALL);
 
 require_once("vendor/autoload.php");
 
@@ -13,6 +13,8 @@ use PHPMailer\PHPMailer\Exception;
 $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__)->load();
 
 var_dump($_ENV['EMAIL']);
+
+echo "in php"
 
 // echo getenv("USER");
 
