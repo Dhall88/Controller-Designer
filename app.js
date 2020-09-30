@@ -1,4 +1,5 @@
 $(() => {
+
     let result = [];
     let $activeControl;
     let $digitalJoy = $("#digitalJoy"), $analogJoy1=$("#analogJoy1"), $analogJoy2=$("#analogJoy2"),
