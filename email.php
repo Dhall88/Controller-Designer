@@ -1,7 +1,7 @@
 <?php
 
-// ini_set('display_errors', 1); 
-// error_reporting(E_ALL);
+ini_set('display_errors', 1); 
+error_reporting(E_ALL);
 
 require_once("vendor/autoload.php");
 
@@ -24,9 +24,9 @@ $mail->SMTPAuth = true;
 $mail->SMTPSecure = "tls";
 $mail->Host = "smtp.gmail.com";
 $mail->Port = 587;
-$mail->Username = $_ENV['EMAIL'];
-$mail->Password = $_ENV['PASSWORD'];
-$mail->setFrom($_ENV['EMAIL']);
+$mail->Username = "controllercoords@gmail.com";
+$mail->Password = "FaLLingAcorns573";
+$mail->setFrom("controllercoords@gmail.com");
 $mail->AddAddress("Dhall87@gmail.com");
 $mail->Subject = "trial";
 $mail->Body = "<h1>hello, world!</h1>";
