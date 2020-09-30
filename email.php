@@ -1,11 +1,17 @@
 <?php
 
-require "vendor/autoload.php";
+require_once("vendor/autoload.php");
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+// $sendAddress =  getenv('EMAIL');
 
+$dotenv = \Dotenv\Dotenv::createImmutable(__DIR__)->load();
+
+var_dump($_ENV['EMAIL']);
+
+// echo getenv("USER");
 
 $mail = new PHPMailer();
 $mail->IsSMTP();
@@ -13,10 +19,10 @@ $mail->SMTPAuth = true;
 $mail->SMTPSecure = "tls";
 $mail->Host = "smtp.gmail.com";
 $mail->Port = 587;
-$mail->Username = "controllercoords@gmail.com";
-$mail->Password = "DellDell5736";
-$mail->setFrom("controllercoords@gmail.com");
-$mail->AddAddress("dhall87@gmail.com");
+$mail->Username = $_ENV['EMAIL'];
+$mail->Password = $_ENV['PASSWORD'];
+$mail->setFrom($_ENV['EMAIL']);
+$mail->AddAddress("Dhall87@gmail.com");
 $mail->Subject = "trial";
 $mail->Body = "<h1>hello, world!</h1>";
 
