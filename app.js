@@ -123,7 +123,7 @@ $(() => {
                     console.log("jquery success")
                 },
                 error: function(data){
-                    alert(data);
+                    console.log(data);
                 }
             })
 
