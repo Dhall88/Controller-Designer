@@ -5,6 +5,8 @@ require "vendor/autoload.php";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+
+
 $mail = new PHPMailer();
 $mail->IsSMTP();
 $mail->SMTPAuth = true;
