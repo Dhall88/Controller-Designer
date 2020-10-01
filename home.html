@@ -14,20 +14,19 @@
     <script src="app.js"></script>
 </head>
 <body>
-    <div class="dropdown">
-        <button class="dropbtn">Dropdown</button>
-        <div class="dropdown-content">
-          <p id="axis1">Axis Pro 1</p>
-          <p id="axis2">Axis Pro 2</p>
-          <p id="axis4">Axis Pro 4</p>
-        </div>
-    </div>
-    <div class="container">
-        <h1>Controller Designer</h1>
-        <h2>Instructions</h3>
-        <h4>Click and drag joysticks and buttons into the controller area to design a controller.</h4>
-        <h4>Drag any unwanted elements over the trash square to remove them from the design</h4>
-        <h4>Click submit to produce a list of the control type and position. Position is currently in pixels but can easily be millimeters, inches, parsecs, etc...</h4>
+  <h1>Controller Designer</h1>
+  <h2>Instructions</h3>
+  <p>Use one of the presets to get a jump on your design or click and drag buttons to create something from scratch! <br>
+  Once you're done, enter your name and a contact email so that we can collaborate and fine tune your work.</p>
+  <div class="dropdown">
+      <button class="dropbtn">Axis Presets</button>
+      <div class="dropdown-content">
+        <p id="axis1">Axis Pro 1</p>
+        <p id="axis2">Axis Pro 2</p>
+        <p id="axis4">Axis Pro 4</p>
+      </div>
+  </div>
+  <div class="container">
         
         <div class="wrapper">
             <div class="wrapper1">
@@ -57,7 +56,7 @@
         </div>
         
         <div class="controller">controller</div>
-        <button onclick="buildArray()">Submit</button>
+        <button class="submit" onclick="buildArray()">Submit</button>
         <ul class="result"></ul>
         <ul> Future addons/improvements
             <p>Styling...obvs</p>
