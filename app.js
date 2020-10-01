@@ -118,7 +118,7 @@ $(() => {
             $.ajax({
                 type: "POST",
                 url: "/email.php",
-                data: {},
+                data: {name:'name'},
                 success: function(){
                     console.log("jquery success")
                 },
