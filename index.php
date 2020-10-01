@@ -10,16 +10,16 @@ if($_POST){
 
 echo "IN PHP";
 $email = new \SendGrid\Mail\Mail();
-$email->setFrom("SENDER_EMAIL", "Example User");
+$email->setFrom(getenv("SENDER_EMAIL"), "Example User");
 $email->setSubject("Sending with SendGrid is Fun");
-$email->addTo("RECIEVER_EMAIL", "Example User");
+$email->addTo(getenv("RECIEVER_EMAIL"), "Example User");
 $email->addContent(
     "text/plain", "and easy to do anywhere, even with PHP"
 );
 $email->addContent(
     "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
 );
-$sendgrid = new \SendGrid('SENDGGRID_API_KEY');
+$sendgrid = new \SendGrid(getenv('SENDGGRID_API_KEY'));
 try {
     $response = $sendgrid->send($email);
     print $response->statusCode() . "\n";
