@@ -100,25 +100,23 @@ $(() => {
 
     buildArray = () => {
         let $components=$(".control")
-        result= [];
+        result= {};
         let $controllerPos=$(".controller").position();
         $.each($components, (index,element) => {
             let $element=$(element)
             let centerOffset=$element.width()/2;
-            result.push({xPos:$element.position().left-$controllerPos.left+centerOffset, yPos:$element.position().top-$controllerPos.top+centerOffset, id:$element.attr('id')})
+
+            result[$element.attr('id')]=[(($element.position().left-$controllerPos.left+centerOffset)/3).toFixed(2),(($element.position().top-$controllerPos.top+centerOffset)/3).toFixed(2)]
+            // result.push({xPos:$element.position().left-$controllerPos.left+centerOffset, yPos:$element.position().top-$controllerPos.top+centerOffset, id:$element.attr('id')})
 
         })
-            if(result.length!==0) {
-                $("li").remove();
-            }
-            result.forEach((element) => {
-                $(".result").append(`<li>Button Type: ${element.id}, xCord: ${element.xPos}, yCord: ${element.yPos}</li>`)
-            })
-            
+            // console.log(result.JSON)
+            let data=JSON.stringify(result)
+            console.log(data)
             $.ajax({
                 type: "POST",
                 url: "/index.php",
-                data: {name:'name'},
+                data: result,
                 success: function(){
                     console.log("jquery success")
                 },
