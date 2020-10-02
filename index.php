@@ -34,8 +34,7 @@ if($_POST){
         "text/plain", 'test'
     );
     $email->addContent(
-        "text/html", "testing"
-        "Digital Joystick: x=$digitalJoy[0] y=$digitalJoy[1] <br>
+        "text/html", "Digital Joystick: x=$digitalJoy[0] y=$digitalJoy[1] <br>
         Analog Joystick 1: x=$analogJoy1[0] y=$analogJoy1[1] <br>
         Analog Joystick 2: x=$analogJoy2[0] y=$analogJoy2[1] <br>
         RT: x=$rt[0] y=$rt[1] <br>
