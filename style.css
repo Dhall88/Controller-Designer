@@ -4,6 +4,63 @@ body {
     background: rgb(219, 216, 216);
 }
 
+h1, h2 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.dropdown-content>p {
+    margin: 0;
+    padding: 1rem;
+}
+
+.dropdown-content>p:hover {
+    background-color: lightgray;
+}
+
+.square {
+    height: 8px;
+    width: 8px;
+    border: solid 2px black;
+    display: inline-block;
+}
+
+.circle {
+    height: 8px;
+    width: 8px;
+    border: solid 2px black;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.triangle {
+    display: inline-block;
+    width: 0; 
+    height: 0; 
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    
+    border-bottom: 12px solid black;
+    position: relative;
+  }
+
+.innerTriangle {
+    position: absolute;
+    top: 4px;
+    left: -4px;
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    
+    border-bottom: 6px solid rgb(248, 252, 44);
+
+}
+
 .container {
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -19,7 +76,7 @@ body {
     height: 609.6px;
     width: 914.4px;
     position: relative;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
 }
 
 
@@ -194,6 +251,7 @@ body {
       background: rgb(235, 133, 55);
       height: 300px; 
       width: 950px;
+      margin-bottom: 2rem;
   }
 
 .wrapper1 {
@@ -209,5 +267,5 @@ body {
 }
 
 h1 {
-    font-size: 5rem;
+    font-size: 3rem;
 }
