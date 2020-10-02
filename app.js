@@ -1,12 +1,9 @@
 $(() => {
 
-    let result = [];
-    let $activeControl;
     let $digitalJoy = $("#digitalJoy"), $analogJoy1=$("#analogJoy1"), $analogJoy2=$("#analogJoy2"),
     $rt=$("#rt"), $rb=$("#rb"), $r3=$("#r3"), $lt=$("#lt"), $lb=$("#lb"), $l3=$("#l3"), $x=$("#x"),
     $y=$("#y"), $a=$("#a"), $b=$("#b"), $menu=$("#menu"),  $psXbox=$("#psXbox"),  $view=$("#view");
     let $document=$(document);
-    let buttonData=[];
     let $controllerPos=$(".controller").position();
 
     let $axis1=$("#axis1"), $axis2=$("#axis2"), $axis4=$("#axis4");
@@ -69,22 +66,18 @@ $(() => {
     })
 
     $document.mousedown((event)=>{
-        console.log(event.target)
 
         if (!$(event.target).hasClass("control")){
-            console.log("in first if")
             return;
         }
 
-        let deltaX, deltaY, lastX=event.pageX, lastY=event.pageY, activePosition, mouseOffsetX, mouseOffsetY;
+        let deltaX, deltaY, lastX=event.pageX, lastY=event.pageY, activePosition, mouseOffsetX, mouseOffsetY, $activeControl;
             $activeControl=$(event.target);
             activePosition=$activeControl.position();
-            console.log(activePosition.left)
             $activeControl.css({position: 'absolute'})
-        mouseOffsetX=event.pageX-activePosition.left;
-        mouseOffsetY=event.pageY-activePosition.top;
-        $document.mousemove((event)=>{
-            console.log($activeControl)
+            mouseOffsetX=event.pageX-activePosition.left;
+            mouseOffsetY=event.pageY-activePosition.top;
+            $document.mousemove((event)=>{
             deltaX=lastX-event.pageX;
             deltaY=lastY-event.pageY;
             $activeControl.css({top: lastY+deltaY-mouseOffsetY, left: lastX+deltaX-mouseOffsetX})
@@ -98,31 +91,30 @@ $(() => {
         $document.off("mousemove");
     })
 
-    buildArray = () => {
+    sendDesign = () => {
         let $components=$(".control")
-        result= {};
+        let result= {};
         let $controllerPos=$(".controller").position();
         $.each($components, (index,element) => {
             let $element=$(element)
             let centerOffset=$element.width()/2;
 
             result[$element.attr('id')]=[(($element.position().left-$controllerPos.left+centerOffset)/3).toFixed(2),(($element.position().top-$controllerPos.top+centerOffset)/3).toFixed(2)]
-            // result.push({xPos:$element.position().left-$controllerPos.left+centerOffset, yPos:$element.position().top-$controllerPos.top+centerOffset, id:$element.attr('id')})
 
         })
-            // console.log(result.JSON)
+
             let data=JSON.stringify(result)
-            console.log(data)
             $.ajax({
                 type: "POST",
                 url: "/index.php",
-                data: result,
-                success: function(){
-                    console.log("jquery success")
-                },
-                error: function(data){
-                    console.log(data);
-                }
+                data: result
+                // ,
+                // success: function(){
+                //     console.log("jquery success")
+                // },
+                // error: function(data){
+                //     console.log(data);
+                // }
             })
 
 
