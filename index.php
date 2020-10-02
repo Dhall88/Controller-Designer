@@ -51,7 +51,7 @@ if($_POST){
         menu: x=$menu[0] y=$menu[1] <br>
         view: x=$view[0] y=$view[1] <br>"
     );
-    $sendgrid = new \SendGrid(getenv('SENDGRIND_API_KEY'));
+    $sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
     try {
         $response = $sendgrid->send($email);
         print $response->statusCode() . "\n";
