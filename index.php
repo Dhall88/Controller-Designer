@@ -22,6 +22,8 @@ if($_POST){
     $psXbox=$_POST['psXbox'];
     $menu=$_POST['menu'];
     $view=$_POST['view'];
+    $name=$_POST['name'];
+    $email=$_email['email'];
 
     // echo "IN PHP";
     print_r($_POST);
@@ -33,7 +35,9 @@ if($_POST){
         "text/plain", 'test'
     );
     $email->addContent(
-        "text/html", "Digital Joystick: x=$digitalJoy[0] y=$digitalJoy[1] <br>
+        "text/html", "Name: x=$name  <br>
+        Contact Email: x=$email <br>
+        Digital Joystick: x=$digitalJoy[0] y=$digitalJoy[1] <br>
         Analog Joystick 1: x=$analogJoy1[0] y=$analogJoy1[1] <br>
         Analog Joystick 2: x=$analogJoy2[0] y=$analogJoy2[1] <br>
         RT: x=$rt[0] y=$rt[1] <br>

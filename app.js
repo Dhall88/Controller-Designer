@@ -103,18 +103,20 @@ $(() => {
 
         })
 
-            let data=JSON.stringify(result)
+
+            result["name"] = $("#name").val();
+            result["email"] = $("#name").val();
             $.ajax({
                 type: "POST",
                 url: "/index.php",
                 data: result
-                // ,
-                // success: function(){
-                //     console.log("jquery success")
-                // },
-                // error: function(data){
-                //     console.log(data);
-                // }
+                ,
+                success: function(){
+                    console.log("Client Post success")
+                },
+                error: function(data){
+                    console.log(data);
+                }
             })
 
 
