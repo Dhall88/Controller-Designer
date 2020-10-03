@@ -8,6 +8,12 @@ $(() => {
 
     let $axis1=$("#axis1"), $axis2=$("#axis2"), $axis4=$("#axis4");
 
+    removeText = (element) => {
+        $element=$(element);
+        $element.removeClass("failed")
+        $element.val("");
+    }
+
     $axis1.click(() => {
         $menu.css({position: 'absolute'}).offset({top:20+$controllerPos.top,left:20+$controllerPos.left});
         $psXbox.css({position: 'absolute'}).offset({top:20+$controllerPos.top,left:120+$controllerPos.left});
@@ -90,11 +96,24 @@ $(() => {
     $document.mouseup((event)=> {
         $document.off("mousemove");
     })
+    
+    validate = (str, id) => {
+        if(id==="email") {
+            console.log("in email if")
+            return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(str)
+        }
+        else {
+            return !!str
+        }
+    }
 
     sendDesign = () => {
         let $components=$(".control")
         let result= {};
         let $controllerPos=$(".controller").position();
+        let $name = $("#name");
+        let $email = $("#email")
+
         $.each($components, (index,element) => {
             let $element=$(element)
             let centerOffset=$element.width()/2;
@@ -103,23 +122,39 @@ $(() => {
 
         })
 
+            result["name"] = $name.val();
+            result["email"] = $email.val();
+            let validEmail=validate(result["email"],"email");
+            let validName = validate(result["name"],"name");
 
-            result["name"] = $("#name").val();
-            result["email"] = $("#name").val();
-            $.ajax({
-                type: "POST",
-                url: "/index.php",
-                data: result
-                ,
-                success: function(){
-                    console.log("Client Post success")
-                },
-                error: function(data){
-                    console.log(data);
+            if(!validName) {
+                $name.val("name is required")
+                $name.addClass("failed")
+            } 
+            
+            if(!validEmail){
+                if(!result["email"]){
+                    $email.val("email is required")
+                    $email.addClass("failed")
+                } else {
+                    $email.addClass("failed")
                 }
-            })
-
-
+            }
+            
+            if(validEmail && validName){
+                $.ajax({
+                    type: "POST",
+                    url: "/index.php",
+                    data: result
+                    ,
+                    success: function(){
+                        console.log("Client Post success")
+                    },
+                    error: function(data){
+                        console.log(data);
+                    }
+                    })
+            } 
         }
 
 

@@ -272,3 +272,13 @@ p {
 h1 {
     font-size: 3rem;
 }
+
+input {
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.failed {
+    border-color: red;
+    color: red;
+}

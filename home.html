@@ -59,11 +59,11 @@
         </div>
         
         <div class="controller">controller</div>
-        <form>
+        <form> 
           <label for="name">Name:</label><br>
-          <input type="text" id="name" name="name"><br>
+          <input type="text" id="name" onclick="removeText(this)" name="name"><br>
           <label for="email">Email:</label><br>
-          <input type="text" id="email" name="email">
+          <input type="text" id="email" onclick="removeText(this)" name="email">
         </form>
         <button class="submit" onclick="sendDesign()">Submit</button>
     </div>
