@@ -11,7 +11,10 @@ $(() => {
     removeText = (element) => {
         $element=$(element);
         $element.removeClass("failed")
-        $element.val("");
+        if($element.val()==="email is required") {
+
+            $element.val("");
+        }
     }
 
     $axis1.click(() => {
@@ -100,7 +103,7 @@ $(() => {
     validate = (str, id) => {
         if(id==="email") {
             console.log("in email if")
-            return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(str)
+            return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-]/.test(str)
         }
         else {
             return !!str
