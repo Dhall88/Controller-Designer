@@ -10,7 +10,6 @@ $(() => {
 
     let $axis1=$("#axis1"), $axis2=$("#axis2"), $axis4=$("#axis4");
 
-
     // Axis controller preset poisitions are defined here
 
     $axis1.click(() => {
@@ -102,7 +101,6 @@ $(() => {
 
     validate = (str, id) => {
         if(id==="email") {
-            console.log("in email if")
             return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-]/.test(str)
         }
         else {
@@ -133,15 +131,14 @@ $(() => {
         $.each($components, (index,element) => {
             let $element=$(element)
             let centerOffset=$element.width()/2;
-
-            result[$element.attr('id')]=[(($element.position().left-$controllerPos.left+centerOffset)/3).toFixed(2),(($element.position().top-$controllerPos.top+centerOffset)/3).toFixed(2)]
-
+            result[$element.attr('id')]=[(($element.position().left+centerOffset)/3).toFixed(2),(($element.position().top+centerOffset)/3).toFixed(2)]
         })
 
             result["name"] = $name.val();
             result["email"] = $email.val();
             let validEmail=validate(result["email"],"email");
             let validName = validate(result["name"],"name");
+
 
             if(!validName) {
                 $name.val("name is required")

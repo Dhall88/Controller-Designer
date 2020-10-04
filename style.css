@@ -165,7 +165,8 @@ p {
     height: 169.5px;
     width: 169.5px;
     line-height: 169.5px;
-    left: 15.25px;
+    top: 0px;
+    left: -184.75px;
 }
 
 #analogJoy1 {
@@ -175,7 +176,7 @@ p {
     width: 183.96px;
     line-height: 183.96px;
     top: 169.5px;
-    left: 8.02px;
+    left: -191.98px;
 }
 
 #analogJoy2 {
@@ -185,26 +186,28 @@ p {
     width: 183.96px;
     line-height: 183.96px;
     top: 353.46px;
-    left: 8.02px;
+    left: -191.98px;
 }
 
 #rt {
     background-color: black;
     color: white;
-    left:0px;
+    top: 0px;
+    right:-99.48px;
 }
 
 #rb {
     background-color: black;
     color: white;
-    right: 0px;
+    top: 0px;
+    right: -200px;
 }
 
 #r3 {
     background-color: black;
     color: white;
     top: 99.48px;
-    left: 0px;
+    right: -99.48px;
 
 }
 
@@ -212,45 +215,45 @@ p {
     background-color: black;
     color: white;
     top: 99.48px;
-    right: 0px;
+    right: -200px;
 }
 
 #lb {
     background-color: black;
     color: white;
     top: 198.96px;
-    left: 0px;
+    right: -99.48px;
 }
 
 #l3 {
     background-color: black;
     color: white;
     top: 198.96px;
-    right: 0px;
+    right: -200px;
 }
 
 #x {
     background-color: rgb(0, 140, 255);
     top: 298.44px;
-    left: 0px;
+    right: -99.48px;
 }
 
 #y {
     background-color: rgb(248, 252, 44);
     top: 298.44px;
-    right: 0px;
+    right: -200px;
 }
 
 #a {
     background-color: rgb(25, 207, 50);
     top: 397.92px;
-    left: 0px;
+    right: -99.48px;
 }
 
 #b {
     background-color: rgb(211, 17, 17);
     top: 397.92px;
-    right: 0px;
+    right: -200px;
 }
 
 #menu {
@@ -261,7 +264,7 @@ p {
     width: 78.39px;
     line-height: 78.39px;
     top:497.4px;
-    left: 0px;
+    right: -89.195px;
 }
 
 #psXbox {
@@ -271,7 +274,7 @@ p {
     width: 78.39px;
     line-height: 78.39px;
     top: 537.42px;
-    right: 60.805px;
+    left: -139.195px;
 }
 
 #view {
@@ -282,7 +285,7 @@ p {
     width: 78.39px;
     line-height: 78.39px;
     top:497.4px;
-    right:0px;
+    right: -189.455px;
 }
 
 .submit {
