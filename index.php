@@ -28,9 +28,9 @@ if($_POST){
     // echo "IN PHP";
     print_r($_POST);
     $email = new \SendGrid\Mail\Mail();
-    $email->setFrom(getenv("SENDER_EMAIL"), "Example User");
-    $email->setSubject("Sending with SendGrid is Fun");
-    $email->addTo(getenv("RECIEVER_EMAIL"), "Example User");
+    $email->setFrom(getenv("SENDER_EMAIL"), "$name");
+    $email->setSubject("New Axis Pro configuration");
+    $email->addTo(getenv("RECIEVER_EMAIL"), "Jessie");
     $email->addContent(
         "text/plain", 'test'
     );
