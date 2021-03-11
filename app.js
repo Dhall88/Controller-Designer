@@ -6,6 +6,8 @@ $(() => {
 
     let $document=$(document);
 
+    let $components=$(".control")
+
     let $controllerPos=$(".controller").position();
 
     let $axis1=$("#axis1"), $axis2=$("#axis2"), $axis4=$("#axis4");
@@ -88,13 +90,25 @@ $(() => {
             deltaY=lastY-event.pageY;
             $activeControl.css({top: lastY+deltaY-mouseOffsetY, left: lastX+deltaX-mouseOffsetX})
             lastX=event.pageX;
-            lastY=event.pageY;
-            
+            lastY=event.pageY;            
         })
+
+        $.each($components,(index,element) => {
+            let $element = $(element)
+            if($element.attr('id')===$activeControl.attr('id')) return;
+
+            let elementCenterOffset=$element.width()/2;
+            let elementPosition = $element.position();
+            
+            if(Math.abs(activePosition.left-elementPosition.left)<
+        })
+
+
     })
 
     $document.mouseup((event)=> {
         $document.off("mousemove");
+
     })
 
     // Validates email address and ensures that there is some text in for name field
@@ -122,9 +136,8 @@ $(() => {
     // Posts design coords provided there is a valid name and email, added red lettering and border to input fields if either is invalid
 
     sendDesign = () => {
-        let $components=$(".control")
+        
         let result= {};
-        let $controllerPos=$(".controller").position();
         let $name = $("#name");
         let $email = $("#email")
 
