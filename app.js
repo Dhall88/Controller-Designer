@@ -7,14 +7,13 @@ $(() => {
     let $document=$(document);
 
     let $components=$(".control")
-
-    let $controllerPos=$(".controller").position();
-
+   
     let $axis1=$("#axis1"), $axis2=$("#axis2"), $axis4=$("#axis4");
-
+    
     // Axis controller preset poisitions are defined here
-
+    
     $axis1.click(() => {
+        let $controllerPos=$(".controller").position();
         $menu.offset({top:20+$controllerPos.top,left:20+$controllerPos.left});
         $psXbox.offset({top:20+$controllerPos.top,left:120+$controllerPos.left});
         $view.offset({top:20+$controllerPos.top,left:220+$controllerPos.left});
@@ -31,9 +30,13 @@ $(() => {
         $a.offset({top:450+$controllerPos.top,left:352.5+$controllerPos.left});
         $lt.offset({top:330+$controllerPos.top,left:235+$controllerPos.left});
         $lb.offset({top:450+$controllerPos.top,left:235+$controllerPos.left});
+
+        console.log($controllerPos);
+        console.log($menu.position())
     })
 
     $axis2.click(() => {
+        let $controllerPos=$(".controller").position();
         $menu.offset({top:20+$controllerPos.top,left:315+$controllerPos.left});
         $psXbox.offset({top:20+$controllerPos.top,left:419.5+$controllerPos.left});
         $view.offset({top:20+$controllerPos.top,left:530+$controllerPos.left});
@@ -53,6 +56,7 @@ $(() => {
     })
 
     $axis4.click(() => {
+        let $controllerPos=$(".controller").position();
         $menu.offset({top:50+$controllerPos.top,left:340+$controllerPos.left});
         $psXbox.offset({top:170+$controllerPos.top,left:340+$controllerPos.left});
         $view.offset({top:290+$controllerPos.top,left:340+$controllerPos.left});
@@ -71,6 +75,20 @@ $(() => {
         $lb.offset({top:180+$controllerPos.top,left:470+$controllerPos.left});
     })
 
+
+    validPosition = (activePosition, activeRadius, elementPosition, elementRadius) => {
+
+        let hyp = Math.sqrt(Math.pow(activePosition.left + activeRadius - elementPosition.left - elementRadius, 2) + 
+                            Math.pow(activePosition.top + activeRadius - elementPosition.top - elementRadius, 2));
+
+        if (hyp<(activeRadius + elementRadius + 20)) {
+            return false
+        }
+
+        return true;
+
+        }
+    
     // Mousedown handles smoothly moving controls around the screen
 
     $document.mousedown((event)=>{
@@ -85,28 +103,33 @@ $(() => {
             $activeControl.css({position: 'absolute'})
             mouseOffsetX=event.pageX-activePosition.left;
             mouseOffsetY=event.pageY-activePosition.top;
+
             $document.mousemove((event)=>{
             deltaX=lastX-event.pageX;
             deltaY=lastY-event.pageY;
             $activeControl.css({top: lastY+deltaY-mouseOffsetY, left: lastX+deltaX-mouseOffsetX})
             lastX=event.pageX;
-            lastY=event.pageY;            
-        })
+            lastY=event.pageY; 
 
-        $.each($components,(index,element) => {
-            let $element = $(element)
-            if($element.attr('id')===$activeControl.attr('id')) return;
-
-            let elementCenterOffset=$element.width()/2;
-            let elementPosition = $element.position();
+            for (let i = 0; i<$components.length; i++) {
+                let $element = $($components[i])
+                if(!validPosition($activeControl.position(), $activeControl.width()/2, $element.position(), $element.width()/2) && ($activeControl.attr('id')!==$element.attr('id'))) {
+                    $activeControl.addClass("invalidPosition")
+                    break
+                } else {
+                    $activeControl.removeClass("invalidPosition")
+                }
+    
+            }
             
-            if(Math.abs(activePosition.left-elementPosition.left)<
         })
-
-
+        
+        
+        
     })
-
+    
     $document.mouseup((event)=> {
+
         $document.off("mousemove");
 
     })
@@ -132,6 +155,29 @@ $(() => {
             $element.val("");
         }
     }
+
+    confirmButtonsPresent = () => {
+
+        for(let i = 0; i<$components.length; i++) {
+            let $button = $($components[i]);
+            let $buttonPosition = $button.position()
+            let $buttonWidth = $button.width()
+
+            let $controller = $(".controller");
+            let $controllerHeight = $controller.height()
+            let $controllerWidth = $controller.width();
+
+            console.log('in confirm')
+
+            if($buttonPosition.left<0 || $buttonPosition.left>($controllerWidth-$buttonWidth) ||
+                $buttonPosition.top<0 || $buttonPosition.top>($controllerHeight-$buttonWidth) || 
+                $button.hasClass('invalidPosition')){
+                    return false;
+                }
+        }
+
+        return true;
+    }
     
     // Posts design coords provided there is a valid name and email, added red lettering and border to input fields if either is invalid
 
@@ -151,6 +197,7 @@ $(() => {
             result["email"] = $email.val();
             let validEmail=validate(result["email"],"email");
             let validName = validate(result["name"],"name");
+            let validPositions = confirmButtonsPresent();
 
 
             if(!validName) {
@@ -166,8 +213,12 @@ $(() => {
                     $email.addClass("failed")
                 }
             }
+
+            if(!validPositions) {
+                console.log('off controller')
+            }
             
-            if(validEmail && validName){
+            if(validEmail && validName && validPositions){
                 $.ajax({
                     type: "POST",
                     url: "/index.php",

@@ -33,6 +33,7 @@ p {
 .dropdown {
     position: relative;
     display: inline-block;
+    z-index: 2;
 }
 
 .dropdown-content {
@@ -316,4 +317,8 @@ input {
 .failed {
     border-color: red;
     color: red;
+}
+
+.invalidPosition {
+    opacity: .3;
 }
