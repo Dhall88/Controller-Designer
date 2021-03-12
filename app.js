@@ -81,9 +81,7 @@ $(() => {
         let hyp = Math.sqrt(Math.pow(activePosition.left + activeRadius - elementPosition.left - elementRadius, 2) + 
                             Math.pow(activePosition.top + activeRadius - elementPosition.top - elementRadius, 2));
 
-        if (hyp<(activeRadius + elementRadius + 20)) {
-            return false
-        }
+        if (hyp<(activeRadius + elementRadius + 10)) return false
 
         return true;
 
@@ -97,10 +95,13 @@ $(() => {
             return;
         }
 
-        let deltaX, deltaY, lastX=event.pageX, lastY=event.pageY, activePosition, mouseOffsetX, mouseOffsetY, $activeControl;
+        let deltaX, deltaY, lastX=event.pageX, lastY=event.pageY, 
+            activePosition, mouseOffsetX, mouseOffsetY, $activeControl;
+
             $activeControl=$(event.target);
             activePosition=$activeControl.position();
-            $activeControl.css({position: 'absolute'})
+            $activeControl.css({position: 'absolute'});
+            
             mouseOffsetX=event.pageX-activePosition.left;
             mouseOffsetY=event.pageY-activePosition.top;
 
@@ -129,9 +130,7 @@ $(() => {
     })
     
     $document.mouseup((event)=> {
-
         $document.off("mousemove");
-
     })
 
     // Validates email address and ensures that there is some text in for name field
