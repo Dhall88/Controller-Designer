@@ -50,7 +50,6 @@
 include_once("home.html");
 
 require './vendor/autoload.php';
-header("Access-Control-Allow-Origin: *");
 
 if($_POST){
 
