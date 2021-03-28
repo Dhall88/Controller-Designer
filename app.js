@@ -181,6 +181,8 @@ $(() => {
     // Posts design coords provided there is a valid name and email, added red lettering and border to input fields if either is invalid
 
     sendDesign = () => {
+
+        console.log("in send")
         
         let result= {};
         let $name = $("#name");
@@ -218,6 +220,7 @@ $(() => {
             }
             
             if(validEmail && validName && validPositions){
+                console.log(result)
                 $.ajax({
                     type: "POST",
                     url: "/index.php",
