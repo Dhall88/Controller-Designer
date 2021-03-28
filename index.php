@@ -49,8 +49,6 @@ AcDbCircle
 ".$buttons[$x]['radius']."
   0
 ");
-// fputs($FILE, "")
-  fputs($FILE, "\n");
     }
 
     while ($BUFFER = fgets($CAD_SECOND_HALF,4096)) {
@@ -113,5 +111,10 @@ $email->addAttachment(
     } catch (Exception $e) {
         echo 'Caught exception: ',  $e->getMessage(), "\n";
     }
+
+    $FILE = fopen("test.dxf", "w");
+    fputs($FILE,"");
+    fclose($FILE);
+
 }
 ?>
