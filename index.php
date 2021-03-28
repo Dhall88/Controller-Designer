@@ -60,9 +60,9 @@ AcDbEntity
 100
 AcDbMText
  10
-".$buttons[$x]['x']."
+".$buttons[$x]['x']-$buttons[$x]['radius']/1.1."
  20
-".$buttons[$x]['y']."
+".$buttons[$x]['y']+$buttons[$x]['radius']/2."
  30
 0.0
  40
