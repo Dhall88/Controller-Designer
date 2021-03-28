@@ -11,8 +11,9 @@ if($_POST){
     echo $_POST;
 
     $FILE = fopen("test.dxf", "a");
-$CAD_FIRST_HALF = fopen("first-half.dxf", "r");
-$CAD_SECOND_HALF = fopen("second-half.dxf", "r");
+    $CAD_FIRST_HALF = fopen("first-half.dxf", "r");
+    $CAD_SECOND_HALF = fopen("second-half.dxf", "r");
+    $buttons = $_POST['buttons']
 
 
 
@@ -24,9 +25,12 @@ while ($BUFFER = fgets($CAD_FIRST_HALF,4096)) {
 
     fputs($FILE, "\n");
 
+
+    for ($x = 0; $x < count($buttons); $x++) {
+
     fputs($FILE,"CIRCLE
   5
-4F  LABEL START AT 4F 
+4$x
 330
 2020E
 100
@@ -36,15 +40,18 @@ AcDbEntity
 100
 AcDbCircle
  10
-54.59104477611943  X COORD
+".$buttons[$x]['x']."
  20
-62.67860696517411 Y COORD
+".$buttons[$x]['y']."
  30
 0.0
  40
-37.6670394804424 RADIUS
-  0");
+".$buttons[$x]['radius']."
+  0
+");
+// fputs($FILE, "")
   fputs($FILE, "\n");
+    }
 
     while ($BUFFER = fgets($CAD_SECOND_HALF,4096)) {
         // write line to newdata.txt
@@ -54,22 +61,6 @@ AcDbCircle
 
 fclose($FILE);
 
-    $digitalJoy=$_POST['digitalJoy'];
-    $analogJoy1=$_POST['analogJoy1'];
-    $analogJoy2=$_POST['analogJoy2'];
-    $rt=$_POST['rt'];
-    $rb=$_POST['rb'];
-    $r3=$_POST['r3'];
-    $lt=$_POST['lt'];
-    $lb=$_POST['lb'];
-    $l3=$_POST['l3'];
-    $x=$_POST['x'];
-    $y=$_POST['y'];
-    $a=$_POST['b'];  // ERROR FIX
-    $b=$_POST['b'];
-    $psXbox=$_POST['psXbox'];
-    $menu=$_POST['menu'];
-    $view=$_POST['view'];
     $name=$_POST['name'];
     $contactEmail=$_POST['email'];
 
@@ -89,7 +80,7 @@ fclose($FILE);
 $email->addAttachment(
    $file_encoded,
    "application/dxf",
-   "test.pdf",
+   "test.dxf",
    "attachment"
 );
 

@@ -184,16 +184,17 @@ $(() => {
 
         console.log("in send")
         
-        let result= {};
+        let buttons= [];
+        let result={}
         let $name = $("#name");
         let $email = $("#email")
 
         $.each($components, (index,element) => {
             let $element=$(element)
             let centerOffset=$element.width()/2;
-            result[$element.attr('id')]=[(($element.position().left+centerOffset)/3).toFixed(2),(($element.position().top+centerOffset)/3).toFixed(2)]
+            buttons.push({'id':$element.attr('id'), 'x':($element.position().left+centerOffset)/3, 'y': ((609.6-$element.position().top+centerOffset)/3).toFixed(2), 'radius': centerOffset})
         })
-
+            result["buttons"] = buttons;
             result["name"] = $name.val();
             result["email"] = $email.val();
             let validEmail=validate(result["email"],"email");
