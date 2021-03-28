@@ -13,7 +13,7 @@ if($_POST){
     $FILE = fopen("test.dxf", "a");
     $CAD_FIRST_HALF = fopen("first-half.dxf", "r");
     $CAD_SECOND_HALF = fopen("second-half.dxf", "r");
-    $buttons = $_POST['buttons']
+    $buttons = $_POST['buttons'];
 
 
 
