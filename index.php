@@ -1,14 +1,22 @@
 <?php 
 
-$FILE = fopen("test1.txt", "a");
-$FILE2 = fopen("test2.txt", "r");
+$FILE = fopen("test.dxf", "a");
+$CAD_FIRST_HALF = fopen("first-half.dxf", "r");
+$CAD_SECOND_HALF = fopen("second-half.dxf", "r");
 
-fputs($FILE, "\n");
 
-while ($BUFFER = fgets($FILE2,4096)) {
+
+while ($BUFFER = fgets($CAD_FIRST_HALF,4096)) {
     // write line to newdata.txt
     fputs($FILE,$BUFFER);
     } 
+
+    fputs($FILE, "\n");
+
+    while ($BUFFER = fgets($CAD_SECOND_HALF,4096)) {
+        // write line to newdata.txt
+        fputs($FILE,$BUFFER);
+        } 
 
 // print(fgets($FILE));
 
