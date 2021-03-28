@@ -51,9 +51,6 @@ AcDbCircle
         fputs($FILE,$BUFFER);
         } 
 
-print(fgets($FILE));
-
-fputs($FILE,$FILE2);
 
 fclose($FILE);
 
@@ -68,7 +65,7 @@ fclose($FILE);
     $l3=$_POST['l3'];
     $x=$_POST['x'];
     $y=$_POST['y'];
-    $a=$_POST['b'];
+    $a=$_POST['b'];  // ERROR FIX
     $b=$_POST['b'];
     $psXbox=$_POST['psXbox'];
     $menu=$_POST['menu'];
