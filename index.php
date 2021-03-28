@@ -48,6 +48,42 @@ AcDbCircle
  40
 ".$buttons[$x]['radius']."
   0
+MTEXT
+  5
+40$x
+330
+202FE
+100
+AcDbEntity
+  8
+0
+100
+AcDbMText
+ 10
+".$buttons[$x]['x']."
+ 20
+".$buttons[$x]['y']."
+ 30
+0.0
+ 40
+1.0
+ 41
+0.0
+ 46
+0.0
+ 71
+     1
+ 72
+     1
+  1
+\H3;".$buttons[$x]['id']."\P".$buttons[$x]['x'].",".$buttons[$x]['x']."
+  7
+textstyle15
+ 73
+     1
+ 44
+1.0
+  0
 ");
     }
 
