@@ -81,9 +81,9 @@ fclose($FILE);
 
     print_r($_POST);
     $email = new \SendGrid\Mail\Mail();
-    $email->setFrom(getenv("TEST_EMAIL"), "$name");
+    $email->setFrom(getenv("SENDER_EMAIL"), "$name");
     $email->setSubject("New Axis Pro configuration");
-    $email->addTo(getenv("RECIEVER_EMAIL"), "Jessie");
+    $email->addTo(getenv("TEST_EMAIL"), "Jessie");
     $email->addContent(
         "text/plain", 'test'
     );
@@ -91,7 +91,7 @@ fclose($FILE);
     $file_encoded = base64_encode(file_get_contents('test.dxf'));
 $email->addAttachment(
    $file_encoded,
-   "application/pdf",
+   "application/dxf",
    "test.pdf",
    "attachment"
 );
