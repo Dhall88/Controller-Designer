@@ -192,7 +192,7 @@ $(() => {
         $.each($components, (index,element) => {
             let $element=$(element)
             let centerOffset=$element.width()/2;
-            buttons.push({'id':$element.attr('id'), 'x':($element.position().left+centerOffset)/3, 'y': ((609.6-$element.position().top+centerOffset)/3).toFixed(2), 'radius': centerOffset})
+            buttons.push({'id':$element.attr('id'), 'x':($element.position().left+centerOffset)/3, 'y': ((609.6-$element.position().top+centerOffset)/3).toFixed(2), 'radius': centerOffset/3})
         })
             result["buttons"] = buttons;
             result["name"] = $name.val();
